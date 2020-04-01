@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>transform</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+            background: purple;
+            transition: .5s;
+            float: left;
+             
+            
+        }
+        .box2{
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+            transition: .5s;
+            border: 1px solid black;
+            float: left;
+
+        }
+        .scale2{
+            width: 200px;
+            height: 200px;
+            color: darkmagenta;
+        }
+        .translateX:hover{
+            transform:translateX(20px);
+        }
+        .translateY:hover{
+            transform:translateY(-20px);
+        }
+        .translate:hover{
+            transform:translate(20px,-20px);
+        }
+        .rotate:hover{
+            transform-origin: left top;
+        }
+        .rotate:hover{
+            transform:rotate(360deg);
+        }
+        .scale:hover{
+            transform: scale(1.2,0.8);
+        }
+        .scale2:hover{
+            transform: scale(.1);
+        }
+        .skew:hover{
+            transform: skew(-20deg);
+        }
+        .skew:hover span{
+            transform: skew(-20deg);
+            display: block;
+        }
+        .transform:hover{
+            transform: translate(20px,20px) rotate(60deg) scale(.5);
+        }
+        .matrix:hover{
+            transform:matrix(1.2,0,0,1.2,10,10);
+        }
+    </style>
+</head>
+<body>
+    <div class="box translateX"></div>
+    <div class="box translateY"></div>
+    <div class="box translate"></div>
+    <div class="box rotate"></div>
+    <div class="box scale"></div>
+    <div class="box2">
+        <div class="scale2"></div>
+    </div>
+    <div class="box skew"></div>
+    <div class="box transform"></div>
+    <div class="box matrix"></div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>gradient</title>
+    <style>
+        .box{
+            height: 200px;
+            margin: 10px;    
+        }
+        .gra1{
+            background: linear-gradient(red,green);
+        }
+        .gra2{
+            background: linear-gradient(to top,red,green);
+        }
+        .gra3{
+            background: linear-gradient(120deg,red,green);
+        }
+        .gra4{
+            background: linear-gradient(to bottom,rgba(0,0,0,0),rgba(0,0,0,.5));
+        }
+        .gra5{
+            background: linear-gradient(to bottom,rgba(0,0,0,0),rgba(0,0,0,.5)) no-repeat 
+            bottom left,url(../image/byzantium.jpg) center center ;
+        }
+        .gra6{
+            background: linear-gradient(to right,red,orange,yellow,green,blue,purple);
+        }
+        .gra7{
+            background: linear-gradient(to right,red 30%,orange,yellow,green,blue,purple 70%);
+        }
+        .gra8{
+            background: linear-gradient(to right,red 30%,purple 30%);
+        }
+        .gra9{
+            background: repeating-linear-gradient(to right, red,blue 30%);
+        }
+        .gra10{
+            background: repeating-linear-gradient(to bottom, red,blue);
+            background-size: auto 20px;
+        }
+        .gra11{
+            background:radial-gradient(circle,red,orange);
+            width: 200px;
+            
+        }
+        .gra12{
+            background:radial-gradient(at 80% 80px,red,orange,purple);
+        }
+        .gra12{
+            background:repeating-radial-gradient(circle,red,orange 8%,purple 16%);
+        }
+        h1{
+            background:linear-gradient(to bottom,red,orange,yellow,green,blue,purple);
+            -webkit-background-clip: text;
+            color: transparent;
+            font-size: 500%;
+            
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box gra1"></div>
+    <div class="box gra2"></div>
+    <div class="box gra3"></div>
+    <div class="box gra4"></div>
+    <div class="box gra5"></div>
+    <div class="box gra6"></div>
+    <div class="box gra7"></div>
+    <div class="box gra8"></div>
+    <div class="box gra9"></div>
+    <div class="box gra11"></div>
+    <div class="box gra12"></div>
+    <div class="box gra13"></div>
+    <h1>Hello World</h1>
+    
+</body>
+</html>

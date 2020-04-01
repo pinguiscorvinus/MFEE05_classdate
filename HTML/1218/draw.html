@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #rect {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            background-color: #b0e9ff;
+        }
+        .ball {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #ff2f27;
+            border-radius: 50%;
+            border: 1px solid black;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+
+<div id="rect"></div>
+<button>show</button>
+<textarea cols="60" rows="30"></textarea>
+
+<script>
+    const rect = document.querySelector('#rect');
+    let b, myData = [];
+
+    const getRandomColor = ()=>{
+        let n = Math.floor(16777216*Math.random());
+        n = n.toString(16);
+        return '#'+ '000000'.slice(n.length) + n;
+    };
+
+    const mDown = event=>{
+        rect.addEventListener('mousemove', mMove);
+    };
+
+    const mUp = event=>{
+        rect.removeEventListener('mousemove', mMove);
+    };
+    const mMove = event=>{
+        let size = 6 + Math.floor(Math.random()*30);
+
+        b = document.createElement('div');
+        b.className = 'ball';
+        b.style.left = event.offsetX-size/2 + 'px';
+        b.style.top = event.offsetY-size/2 + 'px';
+        b.style.width = size + 'px';
+        b.style.height = size + 'px';
+        b.style.backgroundColor = getRandomColor();
+        const c = getRandomColor();
+        b.style.backgroundColor = c;
+
+        rect.appendChild(b);
+        myData.push({
+            x: Math.floor(event.offsetX-size/2),
+            y: Math.floor(event.offsetY-size/2),
+            s: size,
+            c: c,
+        });
+    };
+    rect.addEventListener('mousedown', mDown);
+    window.addEventListener('mouseup', mUp);
+
+    document.querySelector('button').addEventListener('click',()=>{
+        document.querySelector('textarea').value= JSON.stringify(myData);
+    })
+
+
+
+</script>
+</body>
+</html>
+

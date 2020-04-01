@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>3dmenu</title>
+    <style>
+        body{
+            background: url(../image/earth.jpg);
+        }
+        nav{
+            max-width: 200px;
+            text-align: center;
+            perspective: 400px;
+            transform:  translate(50% , 50%);
+        }
+        nav ul{
+             list-style: none;
+             transform-style: preserve-3d;
+        }
+        nav ul li a{
+            display: block;
+            padding: 20px;
+            background: black;
+            color: white;
+            text-decoration: none;
+            margin: 20px;
+            border: 2px solid skyblue;
+            transform: rotateY(20deg);
+            transition: .5s;
+        }
+        nav ul li a:hover{
+            transform: translateZ(40px) rotateY(20deg);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="">HOME</a></li>
+            <li><a href="">SHOP</a></li>
+            <li><a href="">ABOUT</a></li>
+            <li><a href="">CONTACT</a></li>
+        </ul>
+    </nav>
+</body>
+</html>

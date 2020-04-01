@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../fontawesome-free-5.11.2-web/css/all.css">
+    <style>
+        .wrapper{
+            max-width: 800px;
+            height: 500px;
+            background: black;
+            overflow: hidden;
+            position: relative;
+        }
+        .sliderimg{
+            width: 2400px;
+            padding: 0;
+            left: 0px;
+            transition: .5s;
+        }
+        li{
+            height: 500px;
+
+        }
+        li img{
+            width: 100%;
+            height: 100%;
+            object-fit:cover;
+        }
+        .slider-dots{
+            width: 100%;
+            bottom: 20px;
+        }
+        .slider-dots li{
+            width: 30px;
+            height: 10px;
+            border: 2px solid white;
+            margin: 0 10px;
+        }
+        .slider-dots li:hover{
+            background-color: white;
+        }
+        .gobutton{
+            width: 50px;
+            height: 100%;
+            top: 0%;
+            bottom: 0%;
+            opacity: 70%;
+            transition: .2s;
+        }
+        .gobutton:hover{
+            opacity: 100%;
+        }
+        .arrow.fas{
+            color: white;
+            font-size: 30px;
+        }
+        .goperv{
+            left:0px;
+        }
+        .gonext{
+            right: 0px;
+        }
+    </style>
+  </head>
+  <body>
+        <div class="wrapper mx-auto position-relative">
+            <ul class="d-flex sliderimg position-absolute" id="sliderimg">
+                <li><img src="../image/slide1.jpeg" alt="" class="fst"></li>
+                <li><img src="../image/slide2.jpeg" alt=""></li>
+                <li><img src="../image/slide3.jpeg" alt=""></li>
+            </ul>
+            <ul class="list-unstyled position-absolute d-flex slider-dots justify-content-center" id="slider-dots">
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <a class="d-flex position-absolute justify-content-center align-items-center goperv gobutton"role="button" >
+                <i class="fas fa-arrow-left arrow"></i>
+            </a>
+            <a class="d-flex position-absolute justify-content-center align-items-center gonext gobutton" role="button">
+                <i class="fas fa-arrow-right arrow"></i>
+            </a>
+        </div>   
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+        let slideWidth=$(".slider-img li").width();
+        let slideCount=$(".slider-img li").length;
+        let index=0;
+        // console.log(slideWidth)
+        // console.log(slideWidth)
+        $("#sliderDots li").eq(0).css("background", "#fff")
+        $("#sliderDots li").on("click mouseenter",function(){
+            // console.log("hover")
+            index=$(this).index();
+            // console.log(index)
+            // $("#sliderImg").css("left", 0-index*slideWidth);
+            // $(this).css("background", "#fff")
+            // .siblings().css("background", "transparent")
+            goSlide()
+
+        })
+        $("#goPrev").click(function(){
+            // console.log("prev")
+            index--;
+            // if(index<0)index=(slideCount-1);
+
+            index<0 ? index=(slideCount-1) : index;
+            goSlide()
+        })
+        $("#goNext").click(function(){
+            // console.log("next")
+            index++;
+            // if(index>(slideCount-1))index=0;
+            index>(slideCount-1)? index=0 : index;
+            goSlide()
+        })
+        function goSlide(){
+            $("#sliderImg").css("left", 0-index*slideWidth);
+            $("#sliderDots li").eq(index).css("background", "#fff")
+            .siblings().css("background", "transparent")
+        }
+    </script>
+  </body>
+</html>

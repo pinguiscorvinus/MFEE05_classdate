@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="rect">
+       時鐘
+    </div>
+    <script>
+        let rect = document.querySelector('#rect');
+        const = run() => {
+            let now = new Date;
+            let h = '0' + now.getDate();
+            let m = '0' + now.getMinutes();
+            let s = '0' + now.getSeconds();
+            rect.innerHTML = 
+            h.slice(h.length-2 , h.length) + ':' +
+            m.slice(m.length-2 , m.length) + ':' +
+            s.slice(s.length-2 , s.length);
+            setTimeout(run , 1000);
+        }
+        
+    </script>
+</body>
+</html>

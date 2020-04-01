@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #rect {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            background-color: #c7fff8;
+        }
+        .ball {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: #ff1916;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+            left: 100px;
+            top: 100px;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="rect"></div>
+    <script>
+        let rect = document.querySelector('#rect');
+        
+        let  b , i , k;
+        let n = 1;
+        for(n=1,k=0; k<6 ; k++){ //for的巢狀結構 內部執行次數
+            for(i=0 ; i<10 ; i++,n++){
+                b = document.createElement('div');
+                b.className = 'ball';
+                b.innerHTML = n;
+                b.style.left = 50 + 60*i + 'px';
+                b.style.top = 50 + 70*k + 'px';
+                b.style.backgroundColor = `rgb(${i*25},0,0)`;
+                rect.appendChild(b)
+                b.onclick = function(){
+                    this.remove();
+                }
+
+            }
+        }
+    </script>
+</body>
+</html>

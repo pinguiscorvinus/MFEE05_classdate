@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="rect"></div>
+    <script>
+        let rect = document.querySelector('#rect');
+
+        const ar = ["a","b","C","D","e","f","g","h","i"];
+
+        const func = function(v, i){
+            rect.innerHTML += `i: ${i}, v: ${v} <br>`;
+        };
+
+        ar.forEach(func); // callback function // 回呼函式
+
+        func('aaa', 'bbb');
+
+    </script>
+</body>
+</html>

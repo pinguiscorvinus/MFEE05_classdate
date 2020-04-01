@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .playground{
+            width: 1024px;
+            height: 768px;
+            background-image: url(../image/map.png);
+            background-size: cover;
+            position: relative;
+
+        }
+        .box{
+            width: 20px;
+            height: 20px;
+            background: cornsilk;
+            position: absolute;
+            /* transition: .2s; */
+            top: 0;
+            left: 0;
+        }
+        .control{
+            width: 30px;
+            height: 30px;
+            margin: 30px;
+        }
+    </style>
+  </head>
+  <body>
+      <div class="container">
+          <div class="playground">
+              <div class="box" id="box"></div>
+          </div>
+          <div class="controlbtn d-flex">
+              <button type="button" class="btn btn-primary control" id="up">↑</button>
+              <button type="button" class="btn btn-primary control" id="down">↓</button>
+              <button type="button" class="btn btn-primary control" id="left">←</button>
+              <button type="button" class="btn btn-primary control" id="right">→</button>
+          </div> 
+      </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+        $("#up").click(function(){
+            let style = {
+                        top:"-=10px"
+                        }
+            $("#box").stop().animate(style);
+        })
+        $("#down").click(function(){
+            // $("#box").css("top","+=10px")
+            let style = {
+                        top:"+=10px" 
+                        }
+            $("#box").stop().animate(style);
+        })
+        $("#left").click(function(){
+            $("#box").css("left","-=10px")
+        })
+        $("#right").click(function(){
+            $("#box").css("left","+=10px")
+        })
+    </script>
+  </body>
+</html>

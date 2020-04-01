@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .clock {
+            position: relative;
+            width: 600px;
+            height: 600px;
+            background-color: #c7fff8;
+            border: 1px solid black;
+            border-radius: 50%;
+
+        }
+        .hand {
+            position: absolute;
+            left: 300px;
+            top: 300px;
+        }
+        .hand-sec {
+            position: absolute;
+            width: 4px;
+            height: 280px;
+            background-color: #ff1916;
+            border-radius: 2px;
+
+            left: -2px;
+            top: -278px;
+        }
+        .hand-min {
+            position: absolute;
+            width: 12px;
+            height: 180px;
+            background-color: #0f10ff;
+            border-radius: 6px;
+
+            left: -6px;
+            top: -174px;
+        }
+        .hand-hr {
+            position: absolute;
+            width: 20px;
+            height: 120px;
+            background-color: #10770a;
+            border-radius: 10px;
+
+            left: -10px;
+            top: -110px;
+        }
+    </style>
+</head>
+<body>
+<div class="clock">
+    <div class="hand">
+        <div class="hand-hr"></div>
+    </div>
+    <div class="hand">
+        <div class="hand-min"></div>
+    </div>
+    <div class="hand">
+        <div class="hand-sec"></div>
+    </div>
+</div>
+
+<script>
+    const hands = document.querySelectorAll('.hand');
+
+    const runClock = ()=>{
+        const now = new Date;
+        const s = now.getSeconds();
+        const m = now.getMinutes();
+        const h = now.getHours();
+        hands[0].style.transform = `rotate(${h*30 + m*.5}deg)`;
+        hands[1].style.transform = `rotate(${m*6}deg)`;
+        hands[2].style.transform = `rotate(${s*6}deg)`;
+        setTimeout(runClock, 1000)
+    };
+
+    runClock();
+
+</script>
+</body>
+</html>

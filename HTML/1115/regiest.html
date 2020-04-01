@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>會員註冊</title>
+    <link rel="icon" href="../image/favicon.png">
+    <link rel="stylesheet" href="../css/cssregister.css">
+</head>
+<body>
+    <div class="title-1">
+        <span>會員註冊</span>
+    </div>
+    <form action="">
+        <div>
+            <label for="account" class="title-2">帳號</label>
+            <input type="text"id="caaount"name="password">
+        </div>
+        <div>
+            <label for="password" class="title-2">密碼</label>
+            <input type="password"id="password"nane="password" placeholder="請輸入8~16位英數混合密碼">
+        </div>
+        <div>
+            <label for="password" class="title-2">再次確認密碼</label>
+            <input type="password"id="password"nane="password" placeholder="請再次輸入密碼">
+        </div>
+        <div>
+            <label for="email"class="title-2">E-mail地址</label>
+            <input type="email"id="email"name="email" placeholder="請輸入有效的E-Mail地址">
+        </div>
+        <div>
+            <label for="gender"class="title-2">性別</label>
+            <input type="radio" name="gender" value="male">男
+            <input type="radio" name="gender" value="female">女
+        </div>
+        <div>
+            <label for="memberclass"class="title-2">會員方案</label>
+            <select name="memberclass" id="memberclass">
+                <option value="memberclass">一般會員</option>
+                <option value="memberclass">高級會員</option>
+                <option value="memberclass">尊貴會員</option>
+            </select>
+        </div>
+        <div>
+            <label for="membergoods"class="title-2">希望擁有的會員福利</label>
+            <input type="checkbox" name="membergoods" id="news">會員好康報
+            <input type="checkbox" name="membergoods" id="priceoff">優惠折價卷
+            <input type="checkbox" name="membergoods" id="Voucher">禮卷抽獎
+            <input type="checkbox" name="membergoods" id="mailcutoff">運費折扣
+        </div>
+        <div class=submit>
+            <input type="submit" value="確定送出">
+            <input type="reset" value="重新填寫">
+        </div>
+    </form>
+</body>
+</html>

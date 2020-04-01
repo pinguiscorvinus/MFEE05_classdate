@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>EX5</title>
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../fontawesome-free-5.11.2-web/css/all.min.css">
+    <style>
+        body{
+            background: lightgrey;
+        }
+        .card{
+            width: 1200px;
+            min-height:800px;
+            background-color:white;
+            box-shadow: 20px 30px 30px black;
+            margin: 0 auto;
+            border-radius: 5% 5% 5% 5%;
+            overflow: hidden;
+            position: relative;
+            transition:.5s;
+            }
+        .card:hover{
+            transform: translateY(-30px);
+            box-shadow: 20px 5px 30px black;
+        }
+        .banner{
+            background: url(../image/kaiserlich-und-königlich.jpg)center center no-repeat;
+            background-size:cover;
+            min-height: 600px;
+        }
+        .photo{
+            width: 250px;
+            height: 250px;
+            background: black;
+            border-radius: 50%;
+            position:absolute;
+            left:50%;
+            top: 50%;
+            margin: -20px -120px;
+        }
+        .picture{
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            position: absolute;
+            object-fit: cover;
+            object-position: center center;
+            z-index: 3;
+            transition: opacity .5s;
+        }
+        .picture:hover{
+            opacity: 50%;
+            z-index: 1;
+        }
+        .fas{
+            color:white;
+            margin: 100px 95px;
+            z-index: 2;
+            opacity: 100%;
+            position: absolute;
+        }
+        .text{
+            min-height:200px;
+            border: 80px solid transparent;
+            border-image: url(../image/frame_border.png) 50 stretch;
+        }
+        .text h1,h2{
+            text-align: center;
+        }
+        .text h1{
+            padding-top: 20px;
+            padding-bottom: 20px;
+            font-style: italic;
+            font-family: 'Lobster', cursive;
+            transition:.5s;
+        }
+        .card:hover h1{
+            letter-spacing: 5px;
+            /* transform: scaleX(1.2); */
+            text-indent: 5px;
+        }
+        .text h2{
+            border-top:2px solid black;
+            padding: 10px;
+            font-family: 'Pacifico', cursive;
+        }
+        .text a{
+            font-family: 'Pacifico', cursive;
+        }
+        .follow{
+            text-align: center;
+            background:gold;
+            padding: 10px;
+            color: black;
+            font-size: 200%;
+            /* display: block; */
+            width: 300px;
+            position: absolute;
+            left:50%;
+            border-radius: 5%;
+            margin: -20px -150px;
+            text-shadow: 0 -2px 0px goldenrod;
+            transition:.5s;
+            z-index: 1;
+        }
+        .follow2{
+            text-align: center;
+            background:linear-gradient(to bottom,yellow ,gold);
+            padding: 10px;
+            font-size: 200%;
+            display: block;
+            width: 300px;
+            position: absolute;
+            left:50%;
+            border-radius: 5%;
+            margin: -20px -150px;
+            z-index: 1;
+            transition:.5s;
+        }
+        .follow2:hover{
+            opacity: 0%;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="banner"></div>
+        <figure class="photo">
+            <img class="picture" src="../image/habsburg.png" alt="">
+            <i class="fas fa-portrait fa-5x"></i>
+        </figure>
+        <div class="text">
+                <h1>Österreichisch-Ungarische</h1>
+                <h2>kaiserlich und königlich</h2>
+                <div class="follow">
+                    <a role="button">Heil Kaiser</a>
+                </div>
+                <div class="follow2"><a role="button">Heil Kaiser</a></div>
+      </div>
+</body>
+</html>

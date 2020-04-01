@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ex1</title>
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../fontawesome-free-5.11.2-web/css/all.min.css">
+    <style>
+        body{
+            background-color: lightgrey;
+        }
+        .card{
+            width: 1200px;
+            min-height:800px;
+            background-color:white;
+            box-shadow: 30px 30px 30px black;
+            margin: 0 auto;
+            border-radius: 5% 5% 5% 5%;
+            overflow: hidden;
+            position: relative;
+            transition: .5s;
+            }
+        .card:hover{
+            transform: translateY(-30px);
+        }    
+        .flag{
+            background: url(../image/kaiserlich-und-königlich.jpg)center center no-repeat;
+            background-size:cover;
+            height: 600px;
+        }
+        .background{
+            width: 215px;
+            height:215px;
+            margin-top:20px;
+            border-radius: 50%;
+            position: absolute;
+            left:42%;
+            top: 50%;
+            background: white;
+        }
+        .background img{
+            max-width: 300px;
+            max-height:300px;
+            margin-top:20px;
+            position: absolute;
+            left:50%;
+            border-radius: 50%;
+            margin: 0px -108px;
+            object-position: center center;
+            object-fit: cover;
+            transition: opacity .5s;
+            z-index: 2;
+        }
+        .fas{
+            position: absolute;
+            left:50%;
+            margin: 70px -30px;
+            z-index: 1;
+            /* opacity: 0%; */
+            transition: .5s;     
+        }
+        .background img:hover{
+            opacity: 50%;
+            z-index: 0;
+        }
+        /* .fas:hover{
+            opacity: 100%;
+        } */
+        .text{
+            border: 80px solid transparent;
+            border-image: url(../image/frame_border.png) 50 stretch;
+        }
+        .text h1,h2{
+            text-align: center;
+        }
+        .text h1{
+            padding-bottom: 20px;
+            font-style: italic;
+            font-family: 'Lobster', cursive;
+            transition:.5s;
+        }
+        .text h1:hover{
+            letter-spacing: 5px;
+            transform: scaleX(1.2);
+        }
+        .text h2{
+            border-top:2px solid black;
+            font-family: 'Pacifico', cursive;
+        }
+        .text a{
+            font-family: 'Pacifico', cursive;
+        }
+        /* .loading{
+            position: fixed;
+            top:50%;
+            left:50%;
+            margin: 0px -72px 0px -90px;
+        } */
+        .follow{
+            text-align: center;
+            background: linear-gradient(to bottom,gold ,yellow);
+            padding: 10px;
+            color: black;
+            font-size: 200%;
+            display: block;
+            width: 300px;
+            position: absolute;
+            left:50%;
+            border-radius: 5%;
+            margin: -20px -150px;
+            text-shadow: 0 -2px 0 black;
+            transition: .5s;
+        }
+        .follow:hover{
+            background: yellow;
+            transition: .5s;
+        }
+    </style>
+</head>
+<body>
+    <figure class="card">
+        <div class="flag"></div> 
+        <div class="background">
+            <img src="../image/habsburg.gif" alt="">
+            <i class="fas fa-portrait fa-5x"></i>
+        </div>
+        <div class="text">
+            <h1>Österreichisch-Ungarische</h1>
+            <h2>kaiserlich und königlich</h2>
+            <div class="follow">
+            <a role="button">Heil Kaiser</a>
+            </div>
+        </div>
+        <!-- <div class="loading">
+            <img src="../image/loading.svg" alt="">
+        </div>  -->
+        
+    </figure>
+    
+</body>
+</html>

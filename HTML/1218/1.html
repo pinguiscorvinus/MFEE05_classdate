@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="score" onchange="docal()" onkeyup="docal()" min="0" max="100">
+    <div id="info"></div>
+    <script>
+        let score = document.querySelector('#score');
+        let info = document.querySelector('#info');
+
+        function docal() {
+            let s = score.value * 1
+            let n = 'c'
+            if (s >= 90){
+                    n = 'A'
+                }
+                else if(s >=80){
+                    n = 'b'
+                }   
+                else{
+                    n = 'c'
+                }
+            info.innerHTML = n
+        }
+        
+    </script> 
+</body>
+</html>

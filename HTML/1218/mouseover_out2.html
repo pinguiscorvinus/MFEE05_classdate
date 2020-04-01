@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #rect {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            background-color: #b0e9ff;
+        }
+    </style>
+</head>
+<body>
+<div id="rect">
+</div>
+<script>
+    const rect = document.querySelector('#rect')
+    const listener = event =>{
+        rect.innerHTML += <div class="ball" style='left:${event.offsetX-10}px; top:${event.offsetY-10}px;' ></div>
+    }
+    
+
+
+</script>
+</body>
+</html>
+

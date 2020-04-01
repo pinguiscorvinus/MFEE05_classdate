@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="rect"></div>
+    <script>
+        let rect = document.querySelector('#rect')
+        const ar = [12 , 99 , 'aaa',['bill' , 25 , 'male'] ];
+        const br = ar
+        const cr = ar.slice(); // 淺層複製
+        ar[3][0] = 'flora';
+        ar[0] = 100;
+        console.log('ar:',ar);
+        console.log('br:',br);
+        console.log('cr:',cr);
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><nav></nav></title>
+    <style>
+        .wrapper{
+            width: 800px;
+            background:burlywood;
+            margin: 0 auto;
+            font-size: 200%;
+        }
+        ul,li{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        ul li{
+            float: left;
+        }
+        ul li a{
+            text-decoration: none;
+            color: black;
+            display: block;
+            padding: 30px;
+        }
+        a:hover{
+            background-color: darkcyan;
+        }
+        .clearfix::after {
+	        visibility: hidden;
+	        display: block;
+	        font-size: 0;
+	        content: " ";
+	        clear: both;
+	        height: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <ul class="clearfix">
+            <li><a href="">home</a></li>
+            <li><a href="">about</a></li>
+            <li><a href="">album</a></li>
+            <li><a href="">contact</a></li>
+        </ul>  
+    </div>
+    
+    </div>
+</body>
+</html>

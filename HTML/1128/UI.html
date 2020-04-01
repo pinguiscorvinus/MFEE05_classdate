@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>UI</title>
+    <style>
+        .resize{
+            width: 300px;
+            height: 500px;
+            border: 1px solid black;
+            resize: both;
+            overflow: auto;
+        }
+        textarea{
+            resize: none;
+        }
+        .box{
+            height: 300px;
+            width: 300px;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid black;
+            outline: 1px solid purple;
+            outline-offset: 10px;
+        }
+       .border-box{  /* padding併入寬高 */
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="resize"></div>
+    <div class="textarea">
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+    </div>
+    <div class="box"></div>
+    <div class="box border-box"></div>
+</body>
+</html>

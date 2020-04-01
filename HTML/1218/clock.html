@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .clock{
+            width: 600px;
+            height: 600px;
+            border: 3px solid black;
+            border-radius: 50%;
+            position: relative;
+        }
+        .center{
+            height: 0;
+            width: 0;
+            position: absolute;
+            left: 50%;
+            bottom: 50%;
+            /* animation: hourcenter 5s linear infinite; */
+        }
+        .sec{
+            width: 4px;
+            height: 300px;
+            background: black;
+            position: absolute;
+            left: -2px;
+            top: -278px;
+        }
+        .min{
+            width: 8px;
+            height: 250px;
+            background: black;
+            position: absolute;
+            left: -4px;
+            top: -240px;
+        }
+        .hour{
+            width: 10px;
+            height: 100px;
+            background: black;
+            position: absolute;
+            left: -5px;
+            top: -100px;
+        }
+        /* @keyframes hourcenter {
+            0%{
+                transform: rotate(0deg)
+            }
+            100%{
+                transform: rotate(360deg)
+            }
+        } */
+        .mark{
+            position: absolute;
+            left: 300px;
+            top: 300px;
+
+
+        }
+        .sc1{
+            position: absolute;
+        }
+        .sc2{
+            position: absolute;
+            width: 1px;
+            height: 30px;
+            background: black;
+            left: -.5px;
+            top: -300px;
+        }
+        .sc2-5{
+            width:5px;
+            height: 40px;
+            background-color: #5a5a5a;
+            left: -1px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="clock">
+        <div class="mark">
+        <div class="sc1">
+            <div class="sc2" ></div>
+        </div>
+    </div>
+        <div class="center">
+            <div class="sec"></div>
+        </div>
+        <div class="center">
+            <div class="min"></div>
+        </div>
+        <div class="center">
+            <div class="hour"></div>
+        </div>
+
+        
+    </div>
+    <script>
+        const centers = document.querySelectorAll('.center ')
+        const mark = document.querySelector('.mark')
+
+        for(let i =0 ; i<60 ; i++){
+            el = document.createElement('div')
+            el.clasname = 'sc1'
+            if(i%5===0){
+            el.innerHTML = `<div class="sc2 sc2-5"></div>`;
+            } 
+            else {
+            el.innerHTML = `<div class="sc2"></div>`;
+            }
+            el.style.transform = `rotate(${i*6}deg)`;
+            mark.appendChild(el);
+            }         
+        const run = () =>{
+            const now = new Date;
+            let sec = now.getSeconds();
+            let min = now.getMinutes();
+            let hr = now.getHours();
+            centers[0].style.transform = `rotate(${sec*6}deg)`
+            centers[1].style.transform = `rotate(${min*6}deg)`;
+            centers[2].style.transform = `rotate(${hr*6}deg)`;
+            setTimeout(run, 1000);
+        };
+        run()
+    </script>
+
+</body>
+</html>

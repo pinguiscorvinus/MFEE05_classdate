@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .box{
+            width: 500px;
+            height: 500px;
+            background-color: cadetblue;
+            transition: .5s;
+        }
+        .color-selete{
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+  </head>
+  <body>
+      <!-- 顏色設定及調色盤 -->
+      <div class="container">
+          <div class="py-2 d-flex">
+            <button type="button" class="btn btn-primary" id="get">get</button>
+            <button type="button" class="btn btn-primary" id="set">set</button>
+            <button type="button" class="btn btn-primary" id="bigger">bigger</button>
+            <div class="color-selete rounded-circle" id="setcolor" style="background-color: crimson;"></div>
+            <div class="color-selete rounded-circle" id="setcolor" style="background-color: cadetblue;"></div>
+            <div class="color-selete rounded-circle" id="setcolor" style="background-color: purple;"></div>
+            <div class="color-selete rounded-circle" id="setcolor" style="background-color: black;"></div>
+          </div>
+          <div class="box"></div>
+
+      </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+        $("#get").click(function(){
+            let bgDate = $(".box").css("background")
+            console.log(bgDate)
+        })
+        let style = {
+            "background":"red",
+            "width": "600px",
+            "height": "600px",
+        }
+        $("#set").click(function(){
+            $(".box").css(style)
+
+        })
+        $("#bigger").click(function(){
+            $(".box").css("width","+=25px")
+        })
+        $(".color-selete").click(function(){
+            let colordate = $(this).css("background");
+            console.log(colordate);
+            $(".box").css("background",colordate);
+        })
+
+    </script>
+  </body>
+</html>

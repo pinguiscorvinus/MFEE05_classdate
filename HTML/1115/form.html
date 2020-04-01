@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>form</title>
+    <style>
+        .form-row{
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form action="" method="POST" enctype="multipart/form-data">
+        <fieldset>
+            <legend>personal info</legend>
+        <div class="form-row">
+            <label for="name">Name</label>
+            <input type="text" id="name"name="name" placeholder="輸入姓名">
+       
+        </div>
+        <div class="form-row">
+            <label for="email">e-mail</label>
+            <input type="email" id="email"name="email" placeholder="輸入信箱">
+        </div>
+        <div class="form-row">
+            <label for="password">password</label>
+            <input type="password"id="password"name="password" placeholder="請輸入8-12位英數混合密碼">
+
+        </div>
+        <div class="form-row">
+            <label for="note">備註</label>
+            <textarea name="note" id="note" cols="30" rows="10"></textarea>
+        </div>
+        <div class="form-row">
+            <label for="gender">Gender:</label>
+            <input type="radio" name="gender" value="male">男
+            <input type="radio" name="gender" value="female">女
+        </div>
+        <div class="rorm-row">
+            <label for="hobby">Hobby:</label>
+            <input type="checkbox" name="hobby" value="music">音樂
+            <input type="checkbox" name="hobby" value="sport">運動
+            <input type="checkbox" name="hobby" value="reading">閱讀
+            <input type="checkbox" name="hobby" value="movie">電影
+        </div>
+        <div class="form-row">
+            <label for="LivingIn">LivingIn:</label>
+            <select name="LivingIn">
+                <option value="TPE">Taipel</option>
+                <option value="TOK">Tokyo</option>
+                <option value="BER">Berlin</option>
+                <option value="NY">Newyork</option>
+            </select>                    
+        </div>
+        <div class="form-row">
+            <label for="file">檔案</label>
+            <input type="file"value='multipart'>
+        </div>
+        <div class="form-row">
+            <input type="submit" value="Send">
+            <input type="reset" value="ResetAll">       
+        </div>
+    </fieldset>
+    </form>
+</body>
+</html>

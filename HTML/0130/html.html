@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+      <div class="container">
+          <h1 id="content">viva la <span class="text-danger">oilon</span></h1>
+          <h1 id="target"></h1>
+          <button type="button" class="btn btn-primary" id="get">get</button>
+          <button type="button" class="btn btn-primary" id="set">set</button>
+          <button type="button" class="btn btn-primary" id="gethtml">gethtml</button>
+          <h1>attr()</h1>
+          <a id="link" href="http://www.google.com"></a>
+          <div class="py-2">
+            <button type="button" class="btn btn-primary" id="getAttr">getAttr</button>
+            <button type="button" class="btn btn-primary" id="setAttr">setAttr</button>
+          </div>
+          <h2>.prop()</h2>
+          <div class="py-2">
+              <button type="button" class="btn btn-primary" id="getProp">getProp</button>
+          </div>
+          <input type="checkbox">
+      </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+        $("#get").click(function(){
+            let content = $("#content").text()
+            // console.log($("h1").text())
+            $("#target").text(content)
+        })
+        $("#set").click(function(){
+            $("#content").text("content")
+        })
+        $("#gethtml").click(function(){
+            let content=$("#content").html()
+            console.log(content)
+        })
+        $("#getAttr").click(function(){
+            let link=$("#link").attr("href"), title=$("#link").attr("title")
+            console.log("link: "+link)
+            console.log("title: "+title)
+        })
+        $("#getAttr").click(function(){
+            let link=$("#link").attr("href"), title=$("#link").attr("title")
+            console.log("link: "+link)
+            console.log("title: "+title)
+        })
+        $("setAttr").click(function(){
+            let setattr = {
+                "href":"https://"
+            }
+        })
+    </script>
+  </body>
+</html>

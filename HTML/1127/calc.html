@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>calc</title><!-- 謹慎使用 -->
+    <style>
+        *{
+            padding: 0;
+            margin: 0 auto;
+        }
+        .wapper ul li{
+            background: white;
+            list-style: none;
+            float: left;
+            width:calc(25% - 20px);
+            margin: 0 10px 10px;
+        }
+        body{
+            background: lightgrey;
+        }
+        .wapper{
+            max-width: 960px;
+            min-height: calc(100vh - 38px);
+        }
+        .clear{
+            clear: both;
+        }
+        footer{
+            padding: 10px;
+            background: black;
+            margin: 0px 10px;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="wapper">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+        <div class="clear"></div>
+    </div>
+    <footer>this is footer</footer>
+</body>
+</html>

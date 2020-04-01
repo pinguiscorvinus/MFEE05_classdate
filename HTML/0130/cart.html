@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+        <div class="container">
+            <div class="card text-left">
+              <div class="card-body">
+                  <table class="table">
+                      <thead>
+                          <tr>
+                              <th>ItemName</th>
+                              <th>Price</th>
+                              <th>Number</th>
+                              <th>count</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr class="prodact" data-id="1" data-price="50">
+                                <td>apple</td>
+                                <td><span class="" id="item1price">50</span></td>
+                                <td>
+                                    <input type="number"class="form-control number" name="" id="item1number"  min="0">
+                                </td>
+                                <td>
+                                    <input type="number"class="form-control-plaintext count" name="" id="countitem1"readonly>
+                                </td>
+                          </tr>
+                          <tr class="prodact" data-id="2" data-price="50">
+                                <td>banana</td>
+                                <td><span class="" id="item2price">30</span></td>
+                                <td>
+                                    <input type="number"class="form-control number" name="" id="item2number" min="0">
+                                </td>
+                                <td>
+                                    <input type="number"class="form-control-plaintext count" name="" id="countitem2"readonly>
+                                </td>
+                          </tr>
+                      </tbody>
+                      <tfoot>
+                          <tr>
+                                <td scope="row">Transport Cost:</td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <input type="number"class="form-control-plaintext" name="" id="" readonly>
+                                </td>
+                          </tr>
+                          <tr>
+                              <td scope="row">Total:</td>
+                              <td></td>
+                              <td><input type="number"class="form-control-plaintext" name="" id="countallnumber" readonly></td>
+                              <td><input type="number"class="form-control-plaintext" name="" id="countallprice" readonly></td>
+                          </tr>
+                      </tfoot>
+                  </table>
+              </div>
+            </div>
+        </div>  
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script>
+            $(".number").on("keyup change",function(){
+                // let itemnumber = $(this).val();
+                // // console.log(itemnumber)
+                // let itemprice = $(this).closest("tr").find("span").text();
+                // // console.log(itemprice)
+                // // console.log(eval(itemprice*itemnumber))
+                // $(this).parent().next().find(":input").val(eval(itemprice*itemnumber))
+                
+                // let pricecount = 0
+                // $(".count").each(function(){
+                //     pricecount += Number($(this).val());
+                // })
+                //  $("#countallprice").val(pricecount);
+                // let countitem1price = $("#item1price").text();
+                // let countitem1number = $("#item1number").val();
+                // let countitem2price = $("#item2price").text();
+                // let countitem2number = $("#item2number").val();
+                // let countitem1 = countitem1price*countitem1number;
+                // let countitem2 = countitem2price*countitem2number;
+                // $("#countitem1").val(countitem1);
+                // $("#countitem2").val(countitem2);
+                // $("#countallnumber").val(eval(countitem1number+countitem2number));
+                // $("#countallprice").val(eval(countitem1+countitem2));
+                total()
+            })
+            total()
+            function total(){
+                let total = 0
+                $(".prodact").each(function(){
+                    let itemnumber = $(this).find(".number").val();
+                    // console.log(itemnumber)
+                    let itemprice = $(this).attr("data-price");
+                    // console.log(itemprice)
+                    let countprice = eval(itemprice*itemnumber)
+                    // console.log(countprice)
+                    $(this).find(".count").val(eval(countprice))
+                })
+                $(".count").each(function(){
+                    total += Number($(this).val());
+                })
+                 $("#countallprice").val(total);
+            }
+            
+           
+        </script>
+  </body>
+</html>

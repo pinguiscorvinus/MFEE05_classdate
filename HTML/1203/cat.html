@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>cat</title>
+    <style>
+        @keyframes walk{
+            0%{
+                background-position: left top;
+            }
+            100%{
+                background-position: -3150px top;
+            }
+        }
+        .cat{
+            margin: 0 auto;
+            height: 380px;
+            width: 350px;
+            background:url(../image/cat.png) left;
+            animation: walk .01s infinite;
+            animation-timing-function: steps( 9, end);
+        }
+        .cat:hover{
+            animation-duration: 1s;
+        }
+    </style>
+</head>
+<body>
+    <div class="cat"></div>
+</body>
+</html>

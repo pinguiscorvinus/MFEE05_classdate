@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            background: url(../image/space-bg.jpg);
+            
+        }
+        .system{
+            position: relative;
+            width: 1000px;
+            height: 1000px;
+            margin: 50px auto;
+        }
+        .circle{
+            width: 550px;
+            height: 550px;
+            position: absolute;
+            top:22%;
+            left: 22%;
+            margin: 0 auto;
+            padding: 0;
+            border: 1px solid white;
+            border-radius: 50%;
+        }
+        .system img{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+        }
+        .sun{
+            transform: translate(-50% , -50%);
+        }
+        .earth{
+            
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            animation: earth 5s linear infinite;
+        }
+        .moon{
+            margin: 10px 0 0 12px ;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            animation: moon 2s linear infinite;
+        }
+        @keyframes earth{
+            0%{
+                transform: rotate(0deg) translateX(250px);
+            }
+            100%{
+                transform: rotate(360deg) translateX(250px);
+            }
+        }
+        @keyframes moon{
+            0%{
+                transform: rotate(0deg) translateX(125px);
+            }
+            100%{
+                transform: rotate(360deg) translateX(125px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="system">
+            <img class="sun" src="../image/sun.png" alt="">
+            <div class="earth">
+                <img src="../image/earth.png" alt="">
+                <img class="moon" src="../image/moon.png" alt="">
+            </div>
+        <div class="circle"> </div>
+    </div>
+</body>
+</html>

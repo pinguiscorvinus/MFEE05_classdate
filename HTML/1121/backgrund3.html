@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>clip</title>
+    <style>
+        .box{
+            width: 900px;
+            height: 900px;
+            padding: 30px;
+            background: url(../image/byzantium.jpg)center center no-repeat;
+            border: 5px dashed black;
+        }
+        .padding-box{
+            background-clip: padding-box;
+        }
+        .content-box{
+            background-clip: content-box;
+        }
+        .border-box{
+            background-clip: border-box;
+        }
+        h1{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 999%;
+            background: url(../image/byzantium.jpg);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+    </style>
+</head>
+<body>
+    <div class="box padding-box"  ></div>
+    <div class="box content-box" ></div>
+    <div class="box border-box" ></div>
+    <h1>Lone Live The Empire</h1>
+</body>
+</html>

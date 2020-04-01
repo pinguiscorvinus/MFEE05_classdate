@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="rect"></div>
+    <script>
+        let ret = document.querySelector('#rect')
+        let s
+        let person = {
+            name:'Anna',
+            age:23,
+            gender:'F',
+            brother:{
+                name:'vincent',
+                age:16,
+                gender:'M'
+            }
+        };
+        for(s in person) {
+                // rect.innerHTML += `${s} : ${person[s]}<br>`;
+                rect.innerHTML += JSON.stringify(person[s]);
+        }
+    </script>
+</body>
+</html>

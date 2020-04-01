@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>flex</title>
+    <style>
+        .wrapper{
+            width: 960px;
+            min-height: 500px;
+            background: lightslategray;
+            margin: 0 auto;
+            display: flex;
+            flex-direction:row;
+            /* justify-content:center; */
+              /* 位置是相對flex-diretion所定義方向 */
+            /* align-items: flex-start; */
+            flex-wrap: wrap;
+            align-content:stretch;
+        }
+        .box{
+            font-size: 300%;
+            width: 150px;
+            /* height: 100px; */
+            margin: 10px;
+            background: purple;
+            /* flex: 1; */
+            /* flex-shrink: 0; */
+            flex: 1 0 200px;
+            
+        }
+        .box1{
+            order: 4;
+            align-self:flex-start;
+        }
+        .box4{
+            order: 3;
+            align-self: center;
+        }
+        /* order也可以使用複數，屆時與一般相反，置於最前，後再行排序 */
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+        <div class="box box4">4</div>
+        <div class="box box5">5</div>
+        <div class="box box6">6</div>
+        <div class="box box7">7</div>
+    </div>
+</body>
+</html>

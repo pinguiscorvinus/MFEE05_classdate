@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #rect {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            background-color: #b0e9ff;
+        }
+        .ball {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #ff2f27;
+            border-radius: 50%;
+            border: 1px solid black;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+
+<div id="rect">
+
+</div>
+<button>show</button>
+
+
+
+<script>
+    const rect = document.querySelector('#rect');
+    let b, myData = [];
+
+    const drawBall = (obj)=>{
+        b = document.createElement('div');
+        b.className = 'ball';
+        b.style.left = obj.x + 'px';
+        b.style.top = obj.y + 'px';
+        b.style.width = obj.s + 'px';
+        b.style.height = obj.s + 'px';
+        b.style.backgroundColor = obj.c;
+        rect.appendChild(b);
+    };
+
+    document.querySelector('button').addEventListener('click', ()=>{
+        fetch('/data/ajex.json')
+            .then(response=>{
+                return response.json();
+            })
+            .then(arr=>{
+                arr.forEach(el=>{
+                    drawBall(el);
+                });
+            });
+    });
+
+</script>
+</body>
+</html>

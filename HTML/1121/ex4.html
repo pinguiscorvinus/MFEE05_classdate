@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ex1</title>
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Pacifico&display=swap" rel="stylesheet">
+    <style>
+        body{
+            background-color: lightgrey;
+        }
+        .card{
+            width: 1200px;
+            min-height:800px;
+            background-color:white;
+            box-shadow: 30px 30px 30px black;
+            margin: 0 auto;
+            border-radius: 5% 5% 5% 5%;
+            overflow: hidden;
+            position: relative;
+            }
+        .flag{
+            background: url(../image/kaiserlich-und-königlich.jpg)center center no-repeat;
+            background-size:cover;
+            height: 600px;
+        }
+        .flag img{
+            max-width: 300px;
+            max-height:300px;
+            margin-top:20px;
+            position: absolute;
+            left:50%;
+            top: 50%;
+            border-radius: 50%;
+            margin: 0px -100px;
+            object-position: center center;
+            object-fit: cover;
+        }
+        .text{
+            border: 80px solid transparent;
+            border-image: url(../image/frame_border.png) 50 stretch;
+        }
+        .text h1,h2{
+            text-align: center;
+        }
+        .text h1{
+            padding-bottom: 20px;
+            border-bottom:2px solid black;
+            font-style: italic;
+            font-family: 'Lobster', cursive;
+        }
+        .text h2{
+            font-family: 'Pacifico', cursive;
+        }
+        .text a{
+            font-family: 'Pacifico', cursive;
+        }
+        /* .loading{
+            position: fixed;
+            top:50%;
+            left:50%;
+            margin: 0px -72px 0px -90px;
+        } */
+        .follow{
+            text-align: center;
+            background: linear-gradient(to bottom,black 50%,yellow 50%);
+            padding: 10px;
+            color: gold;
+            font-size: 200%;
+            display: block;
+            width: 300px;
+            position: absolute;
+            left:50%;
+            border-radius: 5%;
+            margin: -20px -150px;
+            text-shadow: 0 -2px 0 black;
+        }
+        .flower:hover{
+            opacity: 50;
+        }
+    </style>
+</head>
+<body>
+    <figure class="card">
+        <div class="flag">
+            <img src="../image/habsburg.gif" alt="">
+        </div> 
+        <div class="text">
+            <h1>Österreichisch-Ungarische</h1>
+            <h2>kaiserlich und königlich</h2>
+            <div class="follow">
+            <a role="button">Heil Kaiser</a>
+            </div>
+        </div>
+        <!-- <div class="loading">
+            <img src="../image/loading.svg" alt="">
+        </div>  -->
+        
+    </figure>
+    
+</body>
+</html>

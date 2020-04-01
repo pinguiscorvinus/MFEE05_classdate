@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>gridarea</title>
+    <link rel="stylesheet" href="../css/normalize.css">
+    <style>
+        body{
+            background: lightgrey;
+        }
+        .wrapper{
+            max-width: 960px;
+            margin:0 auto;
+            display: grid;
+            grid-template-columns: 4 1fr;
+            grid-template-areas: 'header header header header' 'nav nav nav nav' 'main main main aside' 'footer footer footer footer' ;
+        }
+        header{
+            background: url(https://uniform.wingzero.tw/assets/images/japan-tohoku.jpg);
+            grid-area: header;
+            display: block;
+            margin: 0;
+        }
+        header div{
+            display: block;
+        }
+        nav{
+            background: lightslategrey;
+            grid-area: nav;
+            margin: 0;
+        }
+        nav ul{
+            display: flex;
+            justify-content:space-between;
+            list-style: none;
+            padding: 0;
+            margin: 0 auto;
+            
+        }
+        nav ul li{
+            flex-grow:1;
+        }
+        nav ul li a{
+            text-decoration: none;
+            display: block;
+            padding: 20px;
+            margin: 0 auto;
+            text-align: center;
+            color:white;
+            background:darkslateblue
+        }
+        nav ul li a:hover{
+            background: darkblue;
+        }
+        main{
+            background:white;
+            grid-area: main;
+        }
+        aside{
+            background: lightcoral;
+            grid-area: aside;
+        }
+        footer{
+            background:gray;
+            grid-area: footer;
+            text-align: center;
+        }
+        @media screen and (max-width:576px) {
+            .wrapper{
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+           <div></div>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">Photo</a></li>
+                <li><a href="">Video</a></li>
+                <li><a href="">About</a></li>
+            </ul>
+        </nav>
+        <main>
+            <h1>這是東北地方</h1>
+        </main>
+        <aside>aside</aside>
+        <footer>footer</footer>
+    </div>
+</body>
+</html>
